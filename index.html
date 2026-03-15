@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CPMSD | Connolly Property Management San Diego</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+<style>
+  :root {
+    --dark: #1a1f25;
+    --charcoal: #2a2f38;
+    --slate: #3d4451;
+    --green: #22c55e;
+    --green-dark: #16a34a;
+    --green-muted: #4ade80;
+  }
+  body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+
+  .navbar { background: var(--dark) !important; }
+  .logo { font-size: 1.5rem; font-weight: 800; letter-spacing: 2px; text-decoration: none; }
+  .logo .cpm { color: #fff; }
+  .logo .sd { color: var(--green); }
+
+  .hero {
+    background: var(--dark);
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -40%;
+    left: -15%;
+    width: 50%;
+    height: 200%;
+    background: radial-gradient(ellipse, rgba(34,197,94,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero .subtitle {
+    font-size: 0.85rem;
+    color: var(--green);
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  .hero h1 { font-weight: 800; letter-spacing: -0.5px; }
+  .hero h1 span { color: var(--green); }
+
+  .card-service {
+    background: var(--charcoal);
+    border: 1px solid var(--slate);
+    border-radius: 12px;
+    transition: border-color .3s;
+  }
+  .card-service:hover { border-color: var(--green); }
+  .card-service .icon {
+    width: 44px;
+    height: 44px;
+    background: rgba(34,197,94,0.12);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+  }
+  .card-service h5 { color: #fff; font-weight: 700; }
+  .card-service p { color: #9ca3af; }
+
+  .contact-section { background: #f3f4f6; }
+  .contact-section a { color: var(--green-dark); font-weight: 600; }
+
+  footer { background: var(--dark); border-top: 1px solid var(--charcoal); }
+  footer a { color: var(--green-muted); text-decoration: none; }
+  footer a:hover { color: #fff; }
+</style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-md navbar-dark px-3 px-lg-4">
+  <div class="container-fluid">
+    <a class="logo" href="#">
+      <span class="cpm">CPM</span><span class="sd">SD</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navMain">
+      <ul class="navbar-nav gap-1">
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<section class="hero text-white text-center py-5">
+  <div class="container py-5">
+    <p class="subtitle mb-3">Connolly Property Management San Diego</p>
+    <h1 class="display-4 mb-3">Real Estate Holdings <span>&amp;</span> Software</h1>
+    <p class="lead text-secondary mx-auto mb-5" style="max-width:550px;">Professional property management and technology solutions in the San Diego area.</p>
+    <div class="row justify-content-center g-3">
+      <div class="col-sm-6 col-md-5 col-lg-4">
+        <div class="card-service p-4 text-start h-100">
+          <div class="icon mb-3">🏢</div>
+          <h5>Property Management</h5>
+          <p class="mb-0 small">Full-service real estate holdings and property management across San Diego.</p>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-5 col-lg-4">
+        <div class="card-service p-4 text-start h-100">
+          <div class="icon mb-3">⚙️</div>
+          <h5>Software Solutions</h5>
+          <p class="mb-0 small">Technology tools built to streamline property operations and communications.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact-section py-5 text-center" id="contact">
+  <div class="container">
+    <h2 class="h4 fw-bold mb-3">Get in Touch</h2>
+    <p class="text-secondary mb-1">San Diego, CA</p>
+    <p><a href="mailto:connollypropsd@gmail.com">connollypropsd@gmail.com</a></p>
+  </div>
+</section>
+
+<footer class="py-3 text-center text-secondary small">
+  <div class="container">
+    <p class="mb-1">&copy; 2026 Connolly Property Management San Diego. All rights reserved.</p>
+    <a href="privacy.html">Privacy Policy</a> &nbsp;&middot;&nbsp; <a href="terms.html">Terms of Service</a>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
