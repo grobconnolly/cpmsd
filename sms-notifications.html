@@ -6,63 +6,133 @@
   <title>SMS Notifications – CPMSD, LLC</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; color: #1a1a1a; line-height: 1.6; background: #f8f9fa; }
-    .container { max-width: 640px; margin: 60px auto; padding: 0 20px; }
-    h1 { font-size: 1.75rem; margin-bottom: 8px; }
-    .subtitle { color: #555; margin-bottom: 32px; }
-    .card { background: #fff; border-radius: 8px; padding: 32px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); margin-bottom: 24px; }
-    h2 { font-size: 1.15rem; margin-bottom: 12px; }
-    p, li { font-size: 0.95rem; color: #333; }
-    ul { margin: 12px 0 0 20px; }
-    li { margin-bottom: 6px; }
-    .disclosure { background: #f0f4f8; border-radius: 6px; padding: 16px; margin-top: 20px; font-size: 0.85rem; color: #555; }
-    .disclosure strong { color: #333; }
-    .footer { text-align: center; padding: 32px 0; font-size: 0.8rem; color: #999; }
-    .footer a { color: #666; text-decoration: underline; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; color: #333; line-height: 1.6; background: #f9f9f9; }
+    .container { max-width: 640px; margin: 0 auto; padding: 40px 20px; }
+    h1 { font-size: 24px; margin-bottom: 4px; }
+    .subtitle { color: #666; font-size: 15px; margin-bottom: 32px; }
+    h2 { font-size: 18px; margin: 28px 0 12px; }
+    p, li { font-size: 15px; margin-bottom: 10px; }
+    ul { padding-left: 20px; margin-bottom: 16px; }
+    a { color: #1a73e8; }
+
+    .opt-in-box {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 28px 24px;
+      margin: 28px 0;
+    }
+    .opt-in-box h2 { margin-top: 0; }
+    .field { margin-bottom: 16px; }
+    .field label { display: block; font-size: 14px; font-weight: 600; margin-bottom: 6px; }
+    .field input[type="text"],
+    .field input[type="tel"] {
+      width: 100%; padding: 10px 14px; border: 1px solid #ccc; border-radius: 6px; font-size: 15px; font-family: inherit;
+    }
+    .consent-row {
+      display: flex; align-items: flex-start; gap: 10px; margin: 18px 0 8px;
+    }
+    .consent-row input[type="checkbox"] {
+      margin-top: 4px; width: 18px; height: 18px; flex-shrink: 0;
+    }
+    .consent-text {
+      font-size: 13px; color: #555; line-height: 1.5;
+    }
+    .consent-text a { color: #1a73e8; }
+    .submit-btn {
+      display: block; width: 100%; padding: 12px; background: #1a73e8; color: #fff; border: none;
+      border-radius: 6px; font-size: 15px; font-weight: 600; cursor: pointer; font-family: inherit; margin-top: 16px;
+    }
+    .submit-btn:disabled { background: #a0c4f1; cursor: not-allowed; }
+    .success-msg { display: none; padding: 16px; background: #e8f5e9; border-radius: 8px; text-align: center; font-size: 14px; color: #2e7d32; margin-top: 12px; }
+
+    .info-section { margin-top: 32px; }
+    footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid #ddd; font-size: 13px; color: #888; text-align: center; }
+    footer a { color: #888; }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>CPMSD, LLC — SMS Notifications</h1>
+    <h1>CPMSD, LLC &mdash; SMS Notifications</h1>
     <p class="subtitle">Automated property management alerts</p>
 
-    <div class="card">
-      <h2>About This SMS Program</h2>
-      <p>CPMSD, LLC operates an automated SMS notification system for internal property management operations. Messages include:</p>
-      <ul>
-        <li>Cleaner schedule confirmations and assignments</li>
-        <li>Cleaning completion alerts</li>
-        <li>Escalation notices (e.g., missed cleanings or scheduling conflicts)</li>
-        <li>Weekly operational summaries (revenue, costs, upcoming bookings)</li>
-      </ul>
+    <h2>About This SMS Program</h2>
+    <p>CPMSD, LLC operates an automated SMS notification system for property management operations. Messages include:</p>
+    <ul>
+      <li>Cleaner schedule confirmations and assignments</li>
+      <li>Cleaning completion alerts</li>
+      <li>Escalation notices (e.g., missed cleanings or scheduling conflicts)</li>
+      <li>Weekly operational summaries (revenue, costs, upcoming bookings)</li>
+    </ul>
+
+    <!-- ===== OPT-IN FORM ===== -->
+    <div class="opt-in-box">
+      <h2>Sign Up for SMS Notifications</h2>
+      <p style="font-size:14px; color:#666; margin-bottom:18px;">Enter your information below to receive automated property management text messages from CPMSD, LLC.</p>
+
+      <div class="field">
+        <label for="fullName">Full Name</label>
+        <input type="text" id="fullName" placeholder="Your name">
+      </div>
+
+      <div class="field">
+        <label for="phone">Mobile Phone Number</label>
+        <input type="tel" id="phone" placeholder="+1 (555) 555-5555">
+      </div>
+
+      <div class="consent-row">
+        <input type="checkbox" id="consent">
+        <div class="consent-text">
+          By checking this box, I agree to receive automated property management text messages from <strong>CPMSD, LLC</strong>.
+          Up to 10 msgs/week. Message frequency varies based on booking activity.
+          Message and data rates may apply.
+          Reply <strong>HELP</strong> for help or contact <a href="mailto:rob@cpmsd.com">rob@cpmsd.com</a>.
+          Reply <strong>STOP</strong> to cancel at any time.
+          Consent is not a condition of any purchase.
+          <a href="https://cpmsd.com/privacy.html">Privacy Policy</a> &middot;
+          <a href="https://cpmsd.com/terms.html">Terms &amp; Conditions</a>.
+          Carriers are not liable for any delayed or undelivered messages.
+        </div>
+      </div>
+
+      <button class="submit-btn" id="submitBtn" disabled onclick="handleSubmit()">Sign Up for SMS Alerts</button>
+      <div class="success-msg" id="successMsg">&#10003; You're signed up! You'll receive a confirmation text shortly.</div>
     </div>
 
-    <div class="card">
-      <h2>How to Opt In</h2>
-      <p>To receive SMS notifications from this program, the property owner provides their phone number during system setup and activates notifications. By providing your phone number and enabling notifications, you consent to receive automated text messages from CPMSD, LLC related to property management operations.</p>
-      <p style="margin-top: 12px;">You may also opt in by texting <strong>START</strong> to the designated number.</p>
-    </div>
+    <p style="font-size:14px; color:#666;">You may also opt in by texting <strong>START</strong> to the designated campaign phone number.</p>
 
-    <div class="card">
+    <!-- ===== INFO SECTIONS ===== -->
+    <div class="info-section">
       <h2>Message Frequency &amp; Rates</h2>
-      <p>You will receive up to <strong>10 messages per week</strong>, depending on booking activity.</p>
-      <p style="margin-top: 8px;">Message and data rates may apply. Check with your mobile carrier for details.</p>
+      <p>You will receive up to <strong>10 messages per week</strong>, depending on booking activity. Message and data rates may apply. Check with your mobile carrier for details.</p>
     </div>
 
-    <div class="card">
+    <div class="info-section">
       <h2>How to Opt Out</h2>
       <p>You can stop receiving messages at any time by texting <strong>STOP</strong> to the number from which you received messages. You will receive a confirmation that you have been unsubscribed.</p>
-      <p style="margin-top: 8px;">For help, text <strong>HELP</strong> or email <a href="mailto:rob@cpmsd.com">rob@cpmsd.com</a>.</p>
+      <p>For help, text <strong>HELP</strong> or email <a href="mailto:rob@cpmsd.com">rob@cpmsd.com</a>.</p>
     </div>
 
-    <div class="disclosure">
-      <strong>Disclosure:</strong> By opting in, you agree to receive automated property management text messages from CPMSD, LLC. Consent is not a condition of any purchase. Message frequency varies; up to 10 msgs/week. Msg &amp; Data rates may apply. Reply STOP to cancel, HELP for help. View our <a href="/privacy.html">Privacy Policy</a> and <a href="/terms.html">Terms &amp; Conditions</a>.
-    </div>
-
-    <div class="footer">
+    <footer>
       <p>&copy; 2026 CPMSD, LLC</p>
-      <p><a href="/privacy.html">Privacy Policy</a> &middot; <a href="/terms.html">Terms &amp; Conditions</a></p>
-    </div>
+      <p><a href="https://cpmsd.com/privacy.html">Privacy Policy</a> &middot; <a href="https://cpmsd.com/terms.html">Terms &amp; Conditions</a></p>
+    </footer>
   </div>
+
+  <script>
+    var checkbox = document.getElementById('consent');
+    var btn = document.getElementById('submitBtn');
+    checkbox.addEventListener('change', function() {
+      btn.disabled = !this.checked;
+    });
+    function handleSubmit() {
+      var name = document.getElementById('fullName').value.trim();
+      var phone = document.getElementById('phone').value.trim();
+      if (!name || !phone) { alert('Please enter your name and phone number.'); return; }
+      document.getElementById('successMsg').style.display = 'block';
+      btn.disabled = true;
+      btn.textContent = 'Signed Up';
+    }
+  </script>
 </body>
 </html>
